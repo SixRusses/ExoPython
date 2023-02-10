@@ -4,7 +4,7 @@ from Exercice_2 import Book, Library, Client
 
 class TestBook(unittest.TestCase):
     def test_check_out(self):
-        book = Book("To Kill a Mockingbird", "Client 1")
+        book = Book("To Kill a Mockingbird", "Auteur 1")
         if book.is_checked_out == False:
             book.check_out()
             self.assertTrue(book.is_checked_out)
@@ -12,7 +12,7 @@ class TestBook(unittest.TestCase):
             print("Book is checkout")
 
     def test_check_in(self):
-        book = Book("To Kill a Mockingbird", "Client 2")
+        book = Book("To Kill a Mockingbird", "Auteur 2")
         if book.is_checked_out == False:
             book.check_out()
             self.assertTrue(book.is_checked_out)
@@ -28,9 +28,9 @@ class TestBook(unittest.TestCase):
 class TestLibrary(unittest.TestCase):
     def setUp(self):
         self.library = Library()
-        self.book1 = Book("To Kill a Mockingbird", "Client 1")
+        self.book1 = Book("To Kill a Mockingbird", "Auteur 1")
         self.library.add_book(self.book1)
-        self.book2 = Book("Pride and Prejudice", "Client 2")
+        self.book2 = Book("Pride and Prejudice", "Auteur 2")
         self.library.add_book(self.book2)
 
     def test_add_book(self):
@@ -59,9 +59,9 @@ class TestLibrary(unittest.TestCase):
 class TestClient(unittest.TestCase):
     def setUp(self):
         self.library = Library()
-        self.book1 = Book("To Kill a Mockingbird", "Client 1")
+        self.book1 = Book("To Kill a Mockingbird", "Auteur 1")
         self.library.add_book(self.book1)
-        self.book2 = Book("Pride and Prejudice", "Client 2")
+        self.book2 = Book("Pride and Prejudice", "Auteur 2")
         self.library.add_book(self.book2)
         self.client = Client("Pierre")
 
